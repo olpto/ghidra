@@ -18,6 +18,17 @@ apply plugin: 'eclipse'
 apply from: 'gradle/root/eclipse.gradle'
 apply from: "gradle/support/loadApplicationProperties.gradle"
 
+plugins {
+  id "org.sonarqube" version "7.0.1.6134"
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "olpto_ghidra_20d24c0d-3668-4e8a-9ee4-ac1fbadac091"
+    property "sonar.projectName", "ghidra"
+  }
+}
+
 
 /***************************************************************************************
 * Print current Java and Gradle version and make sure the correct version of gradle is being used
@@ -415,13 +426,3 @@ String generateLibraryDependencyMapping() {
 task allSleighCompile {
 }
 
-plugins {
-  id "org.sonarqube" version "7.0.1.6134"
-}
-
-sonar {
-  properties {
-    property "sonar.projectKey", "olpto_ghidra_20d24c0d-3668-4e8a-9ee4-ac1fbadac091"
-    property "sonar.projectName", "ghidra"
-  }
-}
