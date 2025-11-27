@@ -13,11 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-apply plugin: 'eclipse'
-
-apply from: 'gradle/root/eclipse.gradle'
-apply from: "gradle/support/loadApplicationProperties.gradle"
-
 plugins {
   id "org.sonarqube" version "7.0.1.6134"
 }
@@ -28,6 +23,13 @@ sonar {
     property "sonar.projectName", "ghidra"
   }
 }
+
+apply plugin: 'eclipse'
+
+apply from: 'gradle/root/eclipse.gradle'
+apply from: "gradle/support/loadApplicationProperties.gradle"
+
+
 
 
 /***************************************************************************************
