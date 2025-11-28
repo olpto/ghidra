@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'VM'}
+    agent {label 'Sonar'}
     stages{
         stage('SCM') {
             steps{
